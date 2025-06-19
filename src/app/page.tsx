@@ -1,103 +1,212 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import React from 'react';
+import Link from 'next/link';
+import { 
+  PageContainer, 
+  Container, 
+  ContentSection, 
+  Grid 
+} from '@/styles/components/layout';
+import { 
+  HeroSection, 
+  HeroContainer, 
+  HeroTitle, 
+  HeroSubtitle, 
+  SectionTitle, 
+  SectionSubtitle 
+} from '@/styles/components/sections';
+import { 
+  Card, 
+  ValueCard 
+} from '@/styles/components/cards';
+import { 
+  Button, 
+  CTAButton 
+} from '@/styles/components/buttons';
+import { styled } from '@/styles/stitches.config';
+
+// Hero Buttons
+const HeroButtons = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '$4',
+  alignItems: 'center',
+  
+  '@md': {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+});
+
+// Stats Section
+const StatsSection = styled('section', {
+  py: '$16',
+  background: '$surface',
+});
+
+const StatsGrid = styled('div', {
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  gap: '$8',
+  
+  '@md': {
+    gridTemplateColumns: 'repeat(2, 1fr)',
+  },
+  
+  '@lg': {
+    gridTemplateColumns: 'repeat(4, 1fr)',
+  },
+});
+
+const StatCard = styled('div', {
+  textAlign: 'center',
+  p: '$6',
+  background: '$white',
+  borderRadius: '$xl',
+  boxShadow: '$md',
+  border: '1px solid $border',
+  transition: '$default',
+  
+  '&:hover': {
+    transform: 'translateY(-5px)',
+    boxShadow: '$xl',
+  },
+  
+  '& .icon': {
+    fontSize: '$5xl',
+    mb: '$4',
+  },
+  
+  '& .number': {
+    fontSize: '$4xl',
+    fontWeight: '$black',
+    color: '$primary',
+    mb: '$2',
+  },
+  
+  '& .label': {
+    fontSize: '$lg',
+    fontWeight: '$semibold',
+    color: '$textSecondary',
+  },
+});
+
+// Features Section
+const FeaturesSection = styled('section', {
+  py: '$20',
+  background: 'linear-gradient(135deg, $white 0%, $surface 100%)',
+});
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <PageContainer>
+      <HeroSection gradient="primary">
+        <HeroContainer>
+          <HeroTitle>
+            🚀 <span>AEGIS LLP CO</span><br />
+            技術革新で未来を創造
+          </HeroTitle>
+          <HeroSubtitle>
+            デジタル変革（DX）、UI/UXデザイン、アニメーション技術を専門とする企業連合として、
+            革新的なソリューションで企業の成長と競争力向上を支援します。
+          </HeroSubtitle>
+          <HeroButtons>
+            <CTAButton href="/contact">
+              📞 無料相談を予約する
+            </CTAButton>
+            <CTAButton href="/projects" variant="secondary">
+              💼 導入事例を見る
+            </CTAButton>
+          </HeroButtons>
+        </HeroContainer>
+      </HeroSection>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <StatsSection>
+        <Container>
+          <StatsGrid>
+            <StatCard>
+              <div className="icon">🏢</div>
+              <div className="number">500+</div>
+              <div className="label">導入企業数</div>
+            </StatCard>
+            <StatCard>
+              <div className="icon">⭐</div>
+              <div className="number">98%</div>
+              <div className="label">顧客満足度</div>
+            </StatCard>
+            <StatCard>
+              <div className="icon">🚀</div>
+              <div className="number">1,200+</div>
+              <div className="label">完了プロジェクト</div>
+            </StatCard>
+            <StatCard>
+              <div className="icon">👥</div>
+              <div className="number">50+</div>
+              <div className="label">専門エンジニア</div>
+            </StatCard>
+          </StatsGrid>
+        </Container>
+      </StatsSection>
+
+      <FeaturesSection>
+        <Container>
+          <SectionTitle>🌟 私たちの強み</SectionTitle>
+          <SectionSubtitle>
+            最新技術と豊富な経験を組み合わせた、包括的なデジタルソリューション
+          </SectionSubtitle>
+          <Grid columns={3}>
+            <ValueCard color="primary">
+              <div className="icon">🔧</div>
+              <h3>DX推進支援</h3>
+              <p>
+                企業のデジタル変革を包括的にサポート。
+                戦略立案から実装まで、一貫したサービスを提供します。
+              </p>
+            </ValueCard>
+            <ValueCard color="secondary">
+              <div className="icon">🎨</div>
+              <h3>UI/UXデザイン</h3>
+              <p>
+                ユーザー中心のデザイン思考で、
+                直感的で美しいインターフェースを創造します。
+              </p>
+            </ValueCard>
+            <ValueCard color="accent">
+              <div className="icon">🎬</div>
+              <h3>アニメーション技術</h3>
+              <p>
+                最新のアニメーション技術で、
+                印象的なユーザー体験を実現します。
+              </p>
+            </ValueCard>
+            <ValueCard color="success">
+              <div className="icon">🤖</div>
+              <h3>AI統合</h3>
+              <p>
+                人工知能技術を活用して、
+                効率的で革新的なソリューションを開発します。
+              </p>
+            </ValueCard>
+            <ValueCard color="info">
+              <div className="icon">📱</div>
+              <h3>モバイル最適化</h3>
+              <p>
+                すべてのデバイスで最適な体験を提供する、
+                レスポンシブなソリューションを構築します。
+              </p>
+            </ValueCard>
+            <ValueCard color="purple">
+              <div className="icon">⚡</div>
+              <h3>高性能システム</h3>
+              <p>
+                スケーラブルで高性能なシステム設計により、
+                企業の成長に対応します。
+              </p>
+            </ValueCard>
+          </Grid>
+        </Container>
+      </FeaturesSection>
+    </PageContainer>
   );
 }
