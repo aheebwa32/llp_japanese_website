@@ -104,7 +104,7 @@ export default function HomePage() {
       <HeroSection gradient="primary">
         <HeroContainer>
           <HeroTitle>
-            🚀 <span>AEGIS LLP CO</span><br />
+             <span>AEGIS LLP CO</span><br />
             技術革新で未来を創造
           </HeroTitle>
           <HeroSubtitle>
@@ -151,7 +151,7 @@ export default function HomePage() {
 
       <FeaturesSection>
         <Container>
-          <SectionTitle>🌟 私たちの強み</SectionTitle>
+          <SectionTitle> 私たちの強み</SectionTitle>
           <SectionSubtitle>
             最新技術と豊富な経験を組み合わせた、包括的なデジタルソリューション
           </SectionSubtitle>

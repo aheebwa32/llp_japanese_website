@@ -423,10 +423,10 @@ export default function MembersPage() {
         'AI・機械学習導入',
         'データ分析基盤構築',
       ],
-      stats: {
-        projects: '300+',
-        clients: '200+',
-      },
+      // stats: {
+      //   projects: '300+',
+      //   clients: '200+',
+      // },
       color: 'primary' as const,
       bgColors: { bg1: '#FF6B35', bg2: '#FF4757' },
       specColors: { spec1: '#FF6B35', spec2: '#FF4757' },
@@ -443,10 +443,10 @@ export default function MembersPage() {
         'デザインシステム構築',
         'アクセシビリティ対応',
       ],
-      stats: {
-        projects: '500+',
-        awards: '12',
-      },
+      // stats: {
+      //   projects: '500+',
+      //   awards: '12',
+      // },
       color: 'secondary' as const,
       bgColors: { bg1: '#004E89', bg2: '#3742FA' },
       specColors: { spec1: '#004E89', spec2: '#3742FA' },
@@ -463,10 +463,10 @@ export default function MembersPage() {
         'VR/AR コンテンツ',
         'プロモーション動画',
       ],
-      stats: {
-        projects: '400+',
-        views: '10M+',
-      },
+      // stats: {
+      //   projects: '400+',
+      //   views: '10M+',
+      // },
       color: 'accent' as const,
       bgColors: { bg1: '#FFD23F', bg2: '#FFA502' },
       specColors: { spec1: '#FFD23F', spec2: '#FFA502' },
@@ -483,10 +483,10 @@ export default function MembersPage() {
         '予測分析モデル',
         'チャットボット開発',
       ],
-      stats: {
-        models: '50+',
-        accuracy: '98%',
-      },
+      // stats: {
+      //   models: '50+',
+      //   accuracy: '98%',
+      // },
       color: 'success' as const,
       bgColors: { bg1: '#06D6A0', bg2: '#2ED573' },
       specColors: { spec1: '#06D6A0', spec2: '#2ED573' },
@@ -503,10 +503,10 @@ export default function MembersPage() {
         'CI/CD パイプライン',
         'セキュリティ対策',
       ],
-      stats: {
-        uptime: '99.9%',
-        savings: '40%',
-      },
+      // stats: {
+      //   uptime: '99.9%',
+      //   savings: '40%',
+      // },
       color: 'info' as const,
       bgColors: { bg1: '#457B9D', bg2: '#26D0CE' },
       specColors: { spec1: '#457B9D', spec2: '#26D0CE' },
@@ -523,10 +523,10 @@ export default function MembersPage() {
         'ダッシュボード構築',
         'データマイニング',
       ],
-      stats: {
-        data: '100TB+',
-        insights: '1000+',
-      },
+      // stats: {
+      //   data: '100TB+',
+      //   insights: '1000+',
+      // },
       color: 'purple' as const,
       bgColors: { bg1: '#A55EEA', bg2: '#8B5CF6' },
       specColors: { spec1: '#A55EEA', spec2: '#8B5CF6' },
@@ -540,12 +540,7 @@ export default function MembersPage() {
     { name: 'Adobe', logo: '🎨' },
     { name: 'Salesforce', logo: '☁️' },
     { name: 'Oracle', logo: '🗄️' },
-    { name: 'IBM', logo: '🤖' },
-    { name: 'Meta', logo: '👥' },
-    { name: 'Nvidia', logo: '🖥️' },
-    { name: 'Shopify', logo: '🛒' },
-    { name: 'Slack', logo: '💬' },
-    { name: 'Zoom', logo: '📹' },
+   
   ];
 
   return (
@@ -570,7 +565,7 @@ export default function MembersPage() {
 
       <ContentSection background="white">
         <Container>
-          <SectionTitle>🎯 コアメンバー企業</SectionTitle>
+          <SectionTitle>コアメンバー企業</SectionTitle>
           <SectionSubtitle>
             各分野の専門性を持つ6社が連携し、
             包括的な技術ソリューションを提供します。
@@ -605,14 +600,14 @@ export default function MembersPage() {
                       ))}
                     </ul>
                   </div>
-                  <div className="stats">
+                  {/* <div className="stats">
                     {Object.entries(member.stats).map(([key, value]) => (
                       <div key={key}>
                         <span className="number">{value}</span>
                         <span className="label">{key}</span>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
                   <div className="action">
                     <Link href={`/members/${member.id}`}>
                       詳細を見る →
@@ -627,7 +622,7 @@ export default function MembersPage() {
 
       <ContentSection background="surface">
         <Container>
-          <SectionTitle>🤝 技術パートナー</SectionTitle>
+          <SectionTitle> 技術パートナー</SectionTitle>
           <SectionSubtitle>
             世界最高水準の技術プラットフォームとの
             戦略的パートナーシップ
@@ -646,14 +641,14 @@ export default function MembersPage() {
       <ContentSection background="gradient">
         <Container>
           <JoinCTA>
-            <h3>🚀 パートナー企業募集中</h3>
+            <h3> パートナー企業募集中</h3>
             <p>
               LLP Tech Solutionsでは、共に技術革新を推進する
               パートナー企業を募集しています。
               一緒に未来のビジネスを創造しませんか？
             </p>
             <CTAButton href="/contact">
-              🤝 パートナーシップについて相談
+               パートナーシップについて相談
             </CTAButton>
           </JoinCTA>
         </Container>
