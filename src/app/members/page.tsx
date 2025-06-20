@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { styled } from '@/styles/stitches.config';
 
 const PageContainer = styled('div', {
@@ -219,6 +220,15 @@ const MemberLogo = styled('div', {
   fontSize: '$6xl',
   color: '$white',
   fontWeight: '$black',
+  position: 'relative',
+  overflow: 'hidden',
+  
+  '& img': {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center',
+  },
 });
 
 const MemberContent = styled('div', {
@@ -415,7 +425,7 @@ export default function MembersPage() {
       id: 'technovation',
       name: 'テクノベーション株式会社',
       specialty: 'DX推進・システム開発',
-      logo: 'T',
+      logo: '/tech.jpeg', // Change to image path
       description: 'エンタープライズ向けDXソリューションの専門企業。大手企業のデジタル変革を200社以上支援。',
       features: [
         'クラウドマイグレーション',
@@ -423,10 +433,6 @@ export default function MembersPage() {
         'AI・機械学習導入',
         'データ分析基盤構築',
       ],
-      // stats: {
-      //   projects: '300+',
-      //   clients: '200+',
-      // },
       color: 'primary' as const,
       bgColors: { bg1: '#FF6B35', bg2: '#FF4757' },
       specColors: { spec1: '#FF6B35', spec2: '#FF4757' },
@@ -435,7 +441,7 @@ export default function MembersPage() {
       id: 'creative-ui',
       name: 'クリエイティブUI株式会社',
       specialty: 'UI/UXデザイン',
-      logo: 'C',
+      logo: '/cccdcn.jpeg', 
       description: 'ユーザー体験を重視したデザイン設計。モバイルアプリからWebサービスまで幅広く対応。',
       features: [
         'ユーザビリティテスト',
@@ -443,10 +449,6 @@ export default function MembersPage() {
         'デザインシステム構築',
         'アクセシビリティ対応',
       ],
-      // stats: {
-      //   projects: '500+',
-      //   awards: '12',
-      // },
       color: 'secondary' as const,
       bgColors: { bg1: '#004E89', bg2: '#3742FA' },
       specColors: { spec1: '#004E89', spec2: '#3742FA' },
@@ -455,7 +457,7 @@ export default function MembersPage() {
       id: 'motion-magic',
       name: 'モーションマジック株式会社',
       specialty: 'アニメーション・映像制作',
-      logo: 'M',
+      logo: '/ico.jpeg', 
       description: '最新の3Dアニメーション技術とモーショングラフィックスで、企業のブランド価値を向上。',
       features: [
         '3Dアニメーション',
@@ -463,10 +465,6 @@ export default function MembersPage() {
         'VR/AR コンテンツ',
         'プロモーション動画',
       ],
-      // stats: {
-      //   projects: '400+',
-      //   views: '10M+',
-      // },
       color: 'accent' as const,
       bgColors: { bg1: '#FFD23F', bg2: '#FFA502' },
       specColors: { spec1: '#FFD23F', spec2: '#FFA502' },
@@ -475,7 +473,7 @@ export default function MembersPage() {
       id: 'ai-solutions',
       name: 'AIソリューションズ株式会社',
       specialty: 'AI・機械学習',
-      logo: 'A',
+      logo: '/ai.jpeg', 
       description: '最先端のAI技術を活用したインテリジェントなシステム開発。業務自動化から予測分析まで。',
       features: [
         '自然言語処理',
@@ -483,10 +481,6 @@ export default function MembersPage() {
         '予測分析モデル',
         'チャットボット開発',
       ],
-      // stats: {
-      //   models: '50+',
-      //   accuracy: '98%',
-      // },
       color: 'success' as const,
       bgColors: { bg1: '#06D6A0', bg2: '#2ED573' },
       specColors: { spec1: '#06D6A0', spec2: '#2ED573' },
@@ -495,7 +489,7 @@ export default function MembersPage() {
       id: 'cloud-masters',
       name: 'クラウドマスターズ株式会社',
       specialty: 'クラウドインフラ・DevOps',
-      logo: 'C',
+      logo: '/cloud.jpeg', // Change to image path
       description: 'クラウドネイティブなシステム構築とDevOpsの導入で、企業のIT運用を最適化。',
       features: [
         'AWS/Azure/GCP',
@@ -503,10 +497,6 @@ export default function MembersPage() {
         'CI/CD パイプライン',
         'セキュリティ対策',
       ],
-      // stats: {
-      //   uptime: '99.9%',
-      //   savings: '40%',
-      // },
       color: 'info' as const,
       bgColors: { bg1: '#457B9D', bg2: '#26D0CE' },
       specColors: { spec1: '#457B9D', spec2: '#26D0CE' },
@@ -515,7 +505,7 @@ export default function MembersPage() {
       id: 'data-insights',
       name: 'データインサイト株式会社',
       specialty: 'データ分析・BI',
-      logo: 'D',
+      logo: '/datainsight.jpeg', 
       description: 'ビッグデータの解析とビジネスインテリジェンスで、データドリブンな意思決定を支援。',
       features: [
         'データウェアハウス',
@@ -523,10 +513,6 @@ export default function MembersPage() {
         'ダッシュボード構築',
         'データマイニング',
       ],
-      // stats: {
-      //   data: '100TB+',
-      //   insights: '1000+',
-      // },
       color: 'purple' as const,
       bgColors: { bg1: '#A55EEA', bg2: '#8B5CF6' },
       specColors: { spec1: '#A55EEA', spec2: '#8B5CF6' },
@@ -554,7 +540,7 @@ export default function MembersPage() {
 
       <HeroSection>
         <HeroContainer>
-          <HeroTitle>🏢 メンバー企業紹介</HeroTitle>
+          <HeroTitle> メンバー企業紹介</HeroTitle>
           <HeroSubtitle>
             LLP Tech Solutionsを構成する各専門分野のリーディングカンパニー。
             それぞれが持つ独自の技術と経験を結集し、
@@ -579,7 +565,18 @@ export default function MembersPage() {
                     '--bg2': member.bgColors.bg2,
                   } as React.CSSProperties}
                 >
-                  {member.logo}
+                  <Image
+                    src={member.logo}
+                    alt={`${member.name} logo`}
+                    width={300}
+                    height={160}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                    }}
+                  />
                 </MemberLogo>
                 <MemberContent>
                   <h3>{member.name}</h3>

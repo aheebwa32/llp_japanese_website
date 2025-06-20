@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { styled } from '@/styles/stitches.config';
 
 const PageContainer = styled('div', {
@@ -527,14 +528,14 @@ export default function BlogPage() {
 
   const featuredPost = {
     id: 'future-of-dx',
-    title: '🚀 2025年のDXトレンド：AIとクラウドが変える企業の未来',
+    title: '2025年のDXトレンド：AIとクラウドが変える企業の未来',
     category: 'technology',
     author: '田中 一郎',
     date: '2025年6月15日',
     readTime: '8分',
     excerpt: 'デジタル変革（DX）の最新トレンドを詳しく解説。AI技術とクラウドプラットフォームの進化が企業のビジネスモデルにどのような影響を与えるのか、具体的な事例とともに考察します。',
     tags: ['DX', 'AI', 'クラウド', 'ビジネス変革'],
-    icon: '🤖',
+    image: '/ai.jpeg',
     colors: { color1: '#FF6B35', color2: '#FF4757' },
     categoryColors: { cat1: '#FF6B35', cat2: '#FF4757' },
   };
@@ -542,13 +543,13 @@ export default function BlogPage() {
   const posts = [
     {
       id: 'ui-ux-principles',
-      title: '💡 ユーザー中心設計の基本原則',
+      title: ' ユーザー中心設計の基本原則',
       category: 'design',
       author: '佐藤 美咲',
       date: '2025年6月12日',
       readTime: '5分',
       excerpt: '効果的なUI/UXデザインのための基本原則と実践方法を解説。',
-      icon: '🎨',
+      image: '/ico.jpeg',
       colors: { color1: '#004E89', color2: '#3742FA' },
       categoryColors: { cat1: '#004E89', cat2: '#3742FA' },
     },
@@ -560,31 +561,31 @@ export default function BlogPage() {
       date: '2025年6月10日',
       readTime: '6分',
       excerpt: '最新のWebアニメーション技術とデザイントレンドを詳しく紹介。',
-      icon: '✨',
+      image: '/tech.jpeg',
       colors: { color1: '#FFD23F', color2: '#FFA502' },
       categoryColors: { cat1: '#FFD23F', cat2: '#FFA502' },
     },
     {
       id: 'cloud-migration-guide',
-      title: '☁️ クラウド移行成功の秘訣',
+      title: ' クラウド移行成功の秘訣',
       category: 'tutorial',
       author: '鈴木 雅子',
       date: '2025年6月8日',
       readTime: '10分',
       excerpt: 'オンプレミスからクラウドへの移行を成功させるための実践ガイド。',
-      icon: '🔧',
+      image: '/cloud.jpeg',
       colors: { color1: '#457B9D', color2: '#26D0CE' },
       categoryColors: { cat1: '#457B9D', cat2: '#26D0CE' },
     },
     {
       id: 'startup-dx-case',
-      title: '📈 スタートアップのDX成功事例',
+      title: ' スタートアップのDX成功事例',
       category: 'case-study',
       author: '高橋 達也',
       date: '2025年6月5日',
       readTime: '7分',
       excerpt: '限られたリソースでDXを成功させたスタートアップの事例分析。',
-      icon: '🚀',
+      image: '/cccdcn.jpeg',
       colors: { color1: '#06D6A0', color2: '#2ED573' },
       categoryColors: { cat1: '#06D6A0', cat2: '#2ED573' },
     },
@@ -634,7 +635,7 @@ export default function BlogPage() {
 
       <HeroSection>
         <HeroContainer>
-          <HeroTitle>📝 ブログ & 更新情報</HeroTitle>
+          <HeroTitle> ブログ & 更新情報</HeroTitle>
           <HeroSubtitle>
             技術の最新トレンド、開発ノウハウ、プロジェクト事例など、
             LLP Tech Solutionsの専門家による実践的な情報をお届けします。
@@ -658,7 +659,7 @@ export default function BlogPage() {
             </FilterSection>
             
             <NewsletterSignup>
-              <h3>📬 ニュースレター購読</h3>
+              <h3> ニュースレター購読</h3>
               <p>最新の技術情報を週1回お届けします</p>
               <form>
                 <input type="email" placeholder="メールアドレス" required />
@@ -670,14 +671,18 @@ export default function BlogPage() {
           <BlogGrid>
             <MainContent>
               <FeaturedPost>
-                <PostImage
-                  style={{
-                    '--color1': featuredPost.colors.color1,
-                    '--color2': featuredPost.colors.color2,
-                  } as React.CSSProperties}
-                >
-                  {featuredPost.icon}
-                </PostImage>
+              <PostImage style={{ position: 'relative', height: '300px' }}>
+              {featuredPost.image && (
+                <Image
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 600px) 100vw, 800px"
+                  priority={true}
+                />
+              )}
+            </PostImage>
                 <PostContent>
                   <div 
                     className="category"
@@ -689,9 +694,9 @@ export default function BlogPage() {
                     {categories.find(c => c.id === featuredPost.category)?.label}
                   </div>
                   <div className="meta">
-                    <div className="author">👤 {featuredPost.author}</div>
-                    <div className="date">📅 {featuredPost.date}</div>
-                    <div className="read-time">⏱️ {featuredPost.readTime}</div>
+                    <div className="author"> {featuredPost.author}</div>
+                    <div className="date"> {featuredPost.date}</div>
+                    <div className="read-time"> {featuredPost.readTime}</div>
                   </div>
                   <h2>{featuredPost.title}</h2>
                   <div className="excerpt">{featuredPost.excerpt}</div>
@@ -709,14 +714,17 @@ export default function BlogPage() {
               <PostsGrid>
                 {filteredPosts.map((post) => (
                   <PostCard key={post.id}>
-                    <CardImage
-                      style={{
-                        '--color1': post.colors.color1,
-                        '--color2': post.colors.color2,
-                      } as React.CSSProperties}
-                    >
-                      {post.icon}
-                    </CardImage>
+                    <CardImage style={{ position: 'relative', height: '200px' }}>
+                  {post.image && (
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 600px) 100vw, 400px"
+                    />
+                  )}
+                </CardImage>
                     <CardContent>
                       <div 
                         className="category"
@@ -728,9 +736,9 @@ export default function BlogPage() {
                         {categories.find(c => c.id === post.category)?.label}
                       </div>
                       <div className="meta">
-                        <span>👤 {post.author}</span>
-                        <span>📅 {post.date}</span>
-                        <span>⏱️ {post.readTime}</span>
+                        <span> {post.author}</span>
+                        <span> {post.date}</span>
+                        <span> {post.readTime}</span>
                       </div>
                       <h3>{post.title}</h3>
                       <div className="excerpt">{post.excerpt}</div>
@@ -745,7 +753,7 @@ export default function BlogPage() {
 
             <Sidebar>
               <SidebarWidget>
-                <h3>🔥 人気記事</h3>
+                <h3> 人気記事</h3>
                 <PopularPosts>
                   {popularPosts.map((post, index) => (
                     <div key={index} className="post">
@@ -768,7 +776,7 @@ export default function BlogPage() {
               </SidebarWidget>
 
               <SidebarWidget>
-                <h3>🏷️ タグクラウド</h3>
+                <h3> タグクラウド</h3>
                 <TagCloud>
                   {tags.map((tag, index) => (
                     <Link key={index} href={`/blog/tag/${tag}`}>
@@ -800,7 +808,7 @@ export default function BlogPage() {
                     transition: 'all 150ms ease',
                   }}
                 >
-                  💬 無料相談
+                   無料相談
                 </Link>
               </SidebarWidget>
             </Sidebar>

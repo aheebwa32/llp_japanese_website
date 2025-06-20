@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { styled } from '@/styles/stitches.config';
+import Image from 'next/image';
 
 const PageContainer = styled('div', {
   minHeight: '100vh',
@@ -443,7 +444,7 @@ export default function ProjectsPage() {
       category: 'dx',
       description: '全国500店舗の小売チェーンにおける包括的なデジタル変革。在庫管理システムの刷新から顧客体験の向上まで。',
       techStack: ['React', 'Node.js', 'AWS', 'MongoDB', 'Redis'],
-      icon: '🛒',
+      image: '/DIGITAL.jpeg',
       colors: { color1: '#FF6B35', color2: '#FF4757' },
       tagColors: { tag1: '#FF6B35', tag2: '#FF4757' },
     },
@@ -455,7 +456,7 @@ export default function ProjectsPage() {
       description: '次世代決済アプリのユーザーインターフェース設計。直感的な操作性とセキュリティを両立。',
       techStack: ['Figma', 'React Native', 'TypeScript', 'Firebase'],
       
-      icon: '📱',
+      image: '/FINTECH.jpeg',
       colors: { color1: '#004E89', color2: '#3742FA' },
       tagColors: { tag1: '#004E89', tag2: '#3742FA' },
     },
@@ -467,7 +468,7 @@ export default function ProjectsPage() {
       description: '最新車種の没入型バーチャル体験システム。リアルタイム3Dレンダリングによる高品質な展示。',
       techStack: ['Unity', 'C#', 'Oculus SDK', '3ds Max', 'Blender'],
       
-      icon: '🚗',
+      image: '/exhibit.jpeg',
       colors: { color1: '#FFD23F', color2: '#FFA502' },
       tagColors: { tag1: '#FFD23F', tag2: '#FFA502' },
     },
@@ -479,7 +480,7 @@ export default function ProjectsPage() {
       description: '医療画像解析による診断支援AI。深層学習技術を活用した高精度な診断補助システム。',
       techStack: ['Python', 'TensorFlow', 'OpenCV', 'Docker', 'Kubernetes'],
       
-      icon: '🏥',
+      image: '/AI.jpeg',
       colors: { color1: '#06D6A0', color2: '#2ED573' },
       tagColors: { tag1: '#06D6A0', tag2: '#2ED573' },
     },
@@ -491,7 +492,7 @@ export default function ProjectsPage() {
       description: 'オンプレミスからクラウドへの大規模移行プロジェクト。コスト削減と可用性向上を実現。',
       techStack: ['AWS', 'Terraform', 'Docker', 'Jenkins', 'Prometheus'],
       
-      icon: '☁️',
+      image:'/cloud2.jpeg',
       colors: { color1: '#457B9D', color2: '#26D0CE' },
       tagColors: { tag1: '#457B9D', tag2: '#26D0CE' },
     },
@@ -503,7 +504,7 @@ export default function ProjectsPage() {
       description: '次世代ファッションECサイトの構築。AR試着機能とパーソナライゼーション機能を搭載。',
       techStack: ['Next.js', 'Shopify Plus', 'GraphQL', 'Stripe', 'AR.js'],
       
-      icon: '👗',
+      image:'/fashion.jpeg',
       colors: { color1: '#A55EEA', color2: '#8B5CF6' },
       tagColors: { tag1: '#A55EEA', tag2: '#8B5CF6' },
     },
@@ -536,7 +537,7 @@ export default function ProjectsPage() {
       <ContentSection background="white">
         <Container>
           <StatsSection>
-            <h3>🏆 プロジェクト実績ハイライト</h3>
+            <h3> プロジェクト実績ハイライト</h3>
             <div className="stats-grid">
               <div>
                 <span className="number">1,200+</span>
@@ -578,9 +579,32 @@ export default function ProjectsPage() {
                   style={{
                     '--color1': project.colors.color1,
                     '--color2': project.colors.color2,
+                    padding: 0,
                   } as React.CSSProperties}
                 >
-                  {project.icon}
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      style={{ objectFit: 'cover', borderRadius: '8px' }}
+                      sizes="(max-width: 600px) 100vw, 400px"
+                      priority={true}
+                    />
+                  ) : (
+                    <div style={{
+                      width: '100%',
+                      height: '100%',
+                      background: '#eee',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#aaa',
+                      fontSize: '2rem'
+                    }}>
+                      No Image
+                    </div>
+                  )}
                 </ProjectImage>
                 <ProjectContent>
                   <div 
@@ -642,7 +666,7 @@ export default function ProjectsPage() {
                 e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
               }}
             >
-              💡 あなたのプロジェクトを相談する
+               あなたのプロジェクトを相談する
             </Link>
           </div>
         </Container>

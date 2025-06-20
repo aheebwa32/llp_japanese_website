@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   PageContainer, 
   Container, 
@@ -96,6 +97,18 @@ const StatCard = styled('div', {
 const FeaturesSection = styled('section', {
   py: '$20',
   background: 'linear-gradient(135deg, $white 0%, $surface 100%)',
+});
+
+// For any styled image containers, update with:
+const ImageContainer = styled('div', {
+  // ...existing styles...
+  
+  '& img': {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center',
+  },
 });
 
 export default function HomePage() {

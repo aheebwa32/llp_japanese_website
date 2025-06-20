@@ -274,7 +274,7 @@ export const Footer: React.FC = () => {
       <TopSection>
         <CTAContainer>
           <CTATitle>
-            🚀 プロジェクトを始めませんか？
+            プロジェクトを始めませんか？
           </CTATitle>
           <CTASubtitle>
             LLP Tech Solutionsが提供する革新的な技術ソリューションで、
@@ -294,7 +294,7 @@ export const Footer: React.FC = () => {
       <MainFooter>
         <FooterGrid>
           <CompanyInfo>
-            <h3>🌟 LLP Tech Solutions</h3>
+            <h3> AEGIS LLP Co.</h3>
             <p>
               私たちは、最新のデジタル技術とクリエイティブなデザインを融合させ、
               企業のDX推進を支援する専門企業連合です。UI/UXデザイン、
@@ -302,7 +302,7 @@ export const Footer: React.FC = () => {
             </p>
             
             <ContactInfo>
-              <h4>📍 お問い合わせ</h4>
+              <h4> お問い合わせ</h4>
               <div>
                 <span>📧</span>
                 info@llp-tech-solutions.jp
@@ -312,29 +312,29 @@ export const Footer: React.FC = () => {
                 03-1234-5678
               </div>
               <div>
-                <span>🏢</span>
+                <span></span>
                 東京都渋谷区恵比寿1-1-1
               </div>
             </ContactInfo>
 
             <SocialLinks>
               <SocialLink href="https://twitter.com/llptech" target="_blank">
-                🐦
+                
               </SocialLink>
               <SocialLink href="https://linkedin.com/company/llptech" target="_blank">
-                💼
+                
               </SocialLink>
               <SocialLink href="https://github.com/llptech" target="_blank">
-                💻
+                
               </SocialLink>
               <SocialLink href="https://youtube.com/llptech" target="_blank">
-                📺
+                
               </SocialLink>
             </SocialLinks>
           </CompanyInfo>
 
           <FooterSection>
-            <h3>🏢 サービス</h3>
+            <h3> サービス</h3>
             <ul>
               <li><Link href="/services/dx">DX推進支援</Link></li>
               <li><Link href="/services/ui-ux">UI/UXデザイン</Link></li>
@@ -346,7 +346,7 @@ export const Footer: React.FC = () => {
           </FooterSection>
 
           <FooterSection>
-            <h3>🎯 ソリューション</h3>
+            <h3> ソリューション</h3>
             <ul>
               <li><Link href="/solutions/enterprise">エンタープライズ</Link></li>
               <li><Link href="/solutions/startup">スタートアップ</Link></li>
@@ -358,7 +358,7 @@ export const Footer: React.FC = () => {
           </FooterSection>
 
           <FooterSection>
-            <h3>📚 リソース</h3>
+            <h3> リソース</h3>
             <ul>
               <li><Link href="/resources/case-studies">導入事例</Link></li>
               <li><Link href="/resources/whitepapers">技術資料</Link></li>

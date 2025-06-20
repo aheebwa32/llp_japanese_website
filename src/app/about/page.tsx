@@ -53,6 +53,20 @@ const StatsCard = styled('div', {
   },
 });
 
+const TeamMemberPhoto = styled('div', {
+  width: '200px',
+  height: '200px',
+  borderRadius: '50%',
+  overflow: 'hidden',
+  
+  '& img': {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center',
+  },
+});
+
 export default function AboutPage() {
   return (
     <PageContainer>
@@ -65,7 +79,7 @@ export default function AboutPage() {
 
       <HeroSection gradient="secondary">
         <HeroContainer>
-          <HeroTitle>🏢 会社概要</HeroTitle>
+          <HeroTitle> 会社概要</HeroTitle>
           <HeroSubtitle>
             技術革新で企業の未来を創造する、
             LLP Tech Solutionsの使命と価値観
@@ -75,13 +89,13 @@ export default function AboutPage() {
 
       <ContentSection background="white">
         <Container>
-          <SectionTitle>🎯 私たちのミッション</SectionTitle>
+          <SectionTitle> 私たちのミッション</SectionTitle>
           <SectionSubtitle>
             最新のデジタル技術で企業の競争力を向上させ、持続可能な成長を支援します
           </SectionSubtitle>
           <Grid columns={3}>
             <ValueCard color="primary">
-              <div className="icon">🚀</div>
+              <div className="icon"></div>
               <h3>革新</h3>
               <p>
                 常に最新技術を追求し、
@@ -118,7 +132,7 @@ export default function AboutPage() {
 
       <ContentSection background="surface">
         <Container>
-          <SectionTitle>📊 実績と信頼</SectionTitle>
+          <SectionTitle> 実績と信頼</SectionTitle>
           <SectionSubtitle>
             数字で見るLLP Tech Solutionsの成長と実績
           </SectionSubtitle>

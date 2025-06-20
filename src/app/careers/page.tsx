@@ -775,7 +775,7 @@ export default function CareersPage() {
 
       <HeroSection>
         <HeroContainer>
-          <HeroTitle>🚀 採用情報</HeroTitle>
+          <HeroTitle> 採用情報</HeroTitle>
           <HeroSubtitle>
             LLP Tech Solutionsで一緒に未来の技術を創造しませんか？
             革新的なプロジェクトに挑戦し、個人の成長と会社の発展を
@@ -786,7 +786,7 @@ export default function CareersPage() {
 
       <ContentSection background="white">
         <Container>
-          <SectionTitle>💡 私たちの価値観</SectionTitle>
+          <SectionTitle>私たちの価値観</SectionTitle>
           <SectionSubtitle>
             LLP Tech Solutionsが大切にしている
             4つの価値観をご紹介します。
@@ -806,7 +806,7 @@ export default function CareersPage() {
       <ContentSection background="surface">
         <Container>
           <BenefitsSection>
-            <h3>🎁 充実した福利厚生</h3>
+            <h3> 充実した福利厚生</h3>
             <div className="benefits-grid">
               {companyBenefits.map((benefit, index) => (
                 <div key={index}>
@@ -822,7 +822,7 @@ export default function CareersPage() {
 
       <ContentSection background="white">
         <Container>
-          <SectionTitle>💼 募集中のポジション</SectionTitle>
+          <SectionTitle> 募集中のポジション</SectionTitle>
           <SectionSubtitle>
             現在募集中の職種一覧です。あなたのスキルと
             経験を活かせるポジションを見つけてください。
@@ -842,8 +842,8 @@ export default function CareersPage() {
                     >
                       {job.department}
                     </div>
-                    <div className="location">📍 {job.location}</div>
-                    <div className="type">👔 {job.type}</div>
+                    <div className="location"> {job.location}</div>
+                    <div className="type"> {job.type}</div>
                   </div>
                   <div className="salary">
                     <div className="label">想定年収</div>
@@ -894,7 +894,7 @@ export default function CareersPage() {
           </SectionSubtitle>
           
           <ApplicationForm>
-            <h3>🚀 一緒に未来を創造しましょう</h3>
+            <h3>一緒に未来を創造しましょう</h3>
             <div className="form-grid">
               <FormGroup>
                 <label htmlFor="name">

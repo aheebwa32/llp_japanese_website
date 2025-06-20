@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   PageContainer, 
   Container, 
@@ -198,22 +199,22 @@ export default function NewsPage() {
   const newsData = [
     {
       id: 'ai-partnership',
-      title: '🤖 AI技術パートナーシップ締結のお知らせ',
+      title: 'AI技術パートナーシップ締結のお知らせ',
       category: 'partnership',
       date: '2025年6月10日',
       excerpt: '世界的AI企業との戦略的パートナーシップにより、次世代の人工知能ソリューションを日本市場に提供開始。',
-      icon: '🤖',
+      image: '/AI2.jpeg',
       colors: { color1: '#FF6B35', color2: '#FF4757' },
       categoryColors: { cat1: '#FF6B35', cat2: '#FF4757' },
       featured: true,
     },
     {
       id: 'new-office',
-      title: '🏢 大阪支社開設のお知らせ',
+      title: ' 大阪支社開設のお知らせ',
       category: 'company',
       date: '2025年6月5日',
       excerpt: '関西圏でのサービス拡充を目的として、大阪市中央区に新支社を開設いたします。',
-      icon: '🏢',
+      image: '/exhibit.jpeg',
       colors: { color1: '#004E89', color2: '#3742FA' },
       categoryColors: { cat1: '#004E89', cat2: '#3742FA' },
     },
@@ -283,30 +284,40 @@ export default function NewsPage() {
             </FilterButtons>
           </FilterSection>
 
-          {featuredNews && (
-            <FeaturedNews
-              style={{
-                '--color1': featuredNews.colors.color1,
-                '--color2': featuredNews.colors.color2,
-                '--cat1': featuredNews.categoryColors.cat1,
-                '--cat2': featuredNews.categoryColors.cat2,
-              } as React.CSSProperties}
-            >
-              <div className="image">
-                {featuredNews.icon}
-              </div>
-              <div className="content">
-                <span className="category">{featuredNews.category}</span>
-                <div className="date">{featuredNews.date}</div>
-                <h2>{featuredNews.title}</h2>
-                <div className="excerpt">{featuredNews.excerpt}</div>
-                <Link href={`/news/${featuredNews.id}`} className="read-more">
-                  続きを読む →
-                </Link>
-              </div>
-            </FeaturedNews>
-          )}
-
+          // Featured News
+          
+            {featuredNews && (
+              <FeaturedNews
+                style={{
+                  '--color1': featuredNews.colors.color1,
+                  '--color2': featuredNews.colors.color2,
+                  '--cat1': featuredNews.categoryColors.cat1,
+                  '--cat2': featuredNews.categoryColors.cat2,
+                } as React.CSSProperties}
+              >
+                <div className="image" style={{ position: 'relative' }}>
+                  {featuredNews.image && (
+                    <Image
+                      src={featuredNews.image}
+                      alt={featuredNews.title}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      sizes="(max-width: 600px) 100vw, 800px"
+                      priority={true}
+                    />
+                  )}
+                </div>
+                <div className="content">
+                  <span className="category">{featuredNews.category}</span>
+                  <div className="date">{featuredNews.date}</div>
+                  <h2>{featuredNews.title}</h2>
+                  <div className="excerpt">{featuredNews.excerpt}</div>
+                  <Link href={`/news/${featuredNews.id}`} className="read-more">
+                    続きを読む →
+                  </Link>
+                </div>
+              </FeaturedNews>
+            )}
           <RegularNewsGrid>
             {regularNews.map((news) => (
               <RegularNewsCard
@@ -318,9 +329,17 @@ export default function NewsPage() {
                   '--cat2': news.categoryColors.cat2,
                 } as React.CSSProperties}
               >
-                <div className="image">
-                  {news.icon}
-                </div>
+              <div className="image" style={{ position: 'relative' }}>
+              {news.image && (
+                <Image
+                  src={news.image}
+                  alt={news.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 600px) 100vw, 400px"
+                />
+              )}
+            </div>
                 <div className="content">
                   <span className="category">{news.category}</span>
                   <div className="date">{news.date}</div>

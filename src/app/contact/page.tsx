@@ -212,7 +212,7 @@ export default function ContactPage() {
 
       <HeroSection gradient="brand">
         <HeroContainer>
-          <HeroTitle>📞 お問い合わせ</HeroTitle>
+          <HeroTitle>お問い合わせ</HeroTitle>
           <HeroSubtitle>
             あなたのビジネス課題について、お気軽にご相談ください。
             経験豊富な専門チームが最適なソリューションをご提案いたします。
@@ -224,7 +224,7 @@ export default function ContactPage() {
         <Container>
           <ContactGrid>
             <ContactForm onSubmit={handleSubmit}>
-              <h3>📋 プロジェクト相談フォーム</h3>
+              <h3> プロジェクト相談フォーム</h3>
               
               <FormGroup>
                 <label htmlFor="name">
@@ -374,15 +374,15 @@ export default function ContactPage() {
                 fullWidth
                 size="lg"
               >
-                {isSubmitting ? '送信中...' : '📧 相談内容を送信する'}
+                {isSubmitting ? '送信中...' : ' 相談内容を送信する'}
               </Button>
             </ContactForm>
 
             <ContactInfo>
-              <h3>📍 お問い合わせ先</h3>
+              <h3> お問い合わせ先</h3>
               
               <InfoCard>
-                <span className="icon">🏢</span>
+                <span className="icon"></span>
                 <h4>本社オフィス</h4>
                 <p>〒150-0013</p>
                 <p>東京都渋谷区恵比寿1-1-1</p>
@@ -397,14 +397,14 @@ export default function ContactPage() {
               </InfoCard>
 
               <InfoCard>
-                <span className="icon">📧</span>
+                <span className="icon"></span>
                 <h4>メールアドレス</h4>
                 <p>info@llp-tech-solutions.jp</p>
                 <p>24時間受付</p>
               </InfoCard>
 
               <QuickActions>
-                <h4>🚀 クイックアクション</h4>
+                <h4> クイックアクション</h4>
                 <div>
                   <Link href="/projects">
                     <span className="icon">💼</span>
