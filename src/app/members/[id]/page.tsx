@@ -716,13 +716,13 @@ const companies = {
       {
         title: '小売チェーン売上予測システム',
         description: '需要予測モデルで在庫回転率40%向上、廃棄ロス50%削減',
-        image: '/data1.jpg',
+        image: '/exhibit.jpg',
         colors: { color1: '#A55EEA', color2: '#8B5CF6' },
       },
       {
         title: '製造業品質管理BI',
         description: 'リアルタイム品質監視で不良品率75%削減',
-        image: '/data2.jpg',
+        image: '/cloud.jpeg',
         colors: { color1: '#A55EEA', color2: '#8B5CF6' },
       },
     ],
@@ -730,13 +730,12 @@ const companies = {
 };
 
 interface PageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>; // Fixed to Promise type
 }
 
 export default function CompanyDetailPage({ params }: PageProps) {
-  const company = companies[params.id as keyof typeof companies];
+  const { id } = React.use(params); // Use React.use() to unwrap the Promise
+  const company = companies[id as keyof typeof companies];
   
   if (!company) {
     notFound();
